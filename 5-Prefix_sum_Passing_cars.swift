@@ -15,7 +15,7 @@ import Glibc
 
 public func solution(_ A : inout [Int]) -> Int {
     // write your code in Swift 4.2.1 (Linux)
-    let offset = 1_000_000_000
+    let maxLimitedAllowed = 1_000_000_000
     var suffixSums = Array(repeating: 0, count: A.count)
     var countPassed:Int = 0
     let n = A.count - 1
@@ -30,5 +30,5 @@ public func solution(_ A : inout [Int]) -> Int {
               countPassed += suffixSums[index]
         }
     }
-    return countPassed > offset ? -1 :  countPassed
+    return countPassed > maxLimitedAllowed ? -1 :  countPassed
 }
